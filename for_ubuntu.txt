@@ -1,0 +1,14 @@
+Step 1: Update the APT sources to use HTTPS
+Run these commands to replace http with https in your sources file:
+sudo sed -i 's/http:\/\/in.archive.ubuntu.com/https:\/\/in.archive.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -i 's/http:\/\/security.ubuntu.com/https:\/\/security.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources
+
+Step 2: Update and install the dependencies
+Now, run the update and install the required build tools and PortAudio library:
+sudo apt-get update
+sudo apt-get install -y build-essential portaudio19-dev python3-dev
+
+Step 3: Re-run requirements installation
+Once the system dependencies are installed, try installing your Python requirements again:
+pip install -r requirements.txt
+
