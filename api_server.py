@@ -19,7 +19,7 @@ def handle_availability():
     print(f"\n📅 [API REQUEST] Checking availability for {data.get('date')}")
     result = check_availability(date_iso=data.get('date'))
     print(f"✅ [API RESPONSE] {result}")
-    return jsonify({"result": result})
+    return jsonify({"result": result}) ##return the result
 
 if __name__ == '__main__':
     print("🚀 Local API Bridge running on http://127.0.0.1:5000")
